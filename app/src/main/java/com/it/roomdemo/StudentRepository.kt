@@ -1,7 +1,7 @@
 package com.it.roomdemo
 
 class StudentRepository private constructor(private val studentDao: StudentDao) {
-    fun getStudent() = studentDao.getAllStudentLiveData();
+    fun getStudentLiveData() = studentDao.getAllStudentLiveData();
 
     companion object {
         @Volatile

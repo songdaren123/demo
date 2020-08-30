@@ -10,20 +10,27 @@ import io.reactivex.Observable
 @Dao
 interface StudentDao {
     @Insert
-    fun insertStudent(student: Student): Long
+    fun insertStudent(vararg student: Student)
 
     @Update
-    fun updateStudent(student: Student): Long
+    fun updateStudent(vararg student: Student): Int
 
+    //rxjava
     @Query("SELECT * FROM STUDENT")
-    fun getAllStudentObservable(): Observable<Student>
+    fun getAllStudentObservable(): Observable<List<Student>>
 
+    //rxjava
+    @Query("SELECT * FROM STUDENT WhERE age>:age")
+    fun getStudents(age: Int): Observable<List<Student>>
+
+    //livedata
     @Query("SELECT * FROM STUDENT")
-    fun getAllStudentLiveData(): LiveData<Student>
+    fun getAllStudentLiveData(): LiveData<List<Student>>
 
+    //协程
     @Query("SELECT * FROM STUDENT")
     fun getAllStudentList(): List<Student>
 
     @Query("SELECT * FROM Student")
-    suspend fun getAllStudentSuspend(): Array<Student>
+    suspend fun getAllStudentSuspend(): List<Student>
 }
