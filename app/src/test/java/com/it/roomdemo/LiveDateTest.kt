@@ -3,6 +3,7 @@ package com.it.roomdemo
 import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
+import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
@@ -27,8 +28,8 @@ class LiveDateTest : LifecycleOwner {
 //    var activityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Before
-    fun createData() = runBlocking() {
-//        val context = InstrumentationRegistry.getInstrumentation().targetContext
+    fun createData() {
+//        val  context = ApplicationProvider.getApplicationContext()
 //        studentDao = SchoolDatabase.getInstance(context).studentDao()
 //        studentDao.insertStudent(liubei, caocao, sunquan)
 

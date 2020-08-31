@@ -20,8 +20,8 @@ interface StudentDao {
     fun getAllStudentObservable(): Observable<List<Student>>
 
     //rxjava
-    @Query("SELECT * FROM STUDENT WhERE age>:age")
-    fun getStudents(age: Int): Observable<List<Student>>
+    @Query("SELECT * FROM STUDENT WhERE std_name=:name")
+    fun getStudents(name: String): Observable<List<Student>>
 
     //livedata
     @Query("SELECT * FROM STUDENT")
@@ -29,8 +29,8 @@ interface StudentDao {
 
     //协程
     @Query("SELECT * FROM STUDENT")
-    fun getAllStudentList(): List<Student>
+    suspend fun getAllStudentList(): List<Student>
 
     @Query("SELECT * FROM Student")
-    suspend fun getAllStudentSuspend(): List<Student>
+    fun getAllStudentSuspend(): List<Student>
 }

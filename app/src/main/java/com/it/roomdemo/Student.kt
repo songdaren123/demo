@@ -9,8 +9,8 @@ data class Student(
     @PrimaryKey var id: Long,
     @ColumnInfo(name = "std_name") var name: String,
     val age: Int,
-    @ColumnInfo(name = "std_class") var cls: String,
-    @ColumnInfo(name = "std_address") var address: String
+    @ColumnInfo(name = "std_class") var cls: String
+//    @ColumnInfo(name = "std_address") var address: String
 
 
 )

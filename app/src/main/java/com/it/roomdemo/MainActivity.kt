@@ -19,16 +19,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btUpdate: Button
     private lateinit var btDelete: Button
     private lateinit var btSelect: Button
-//    private val liubei = Student(id = 12, name = "刘备", cls = "三年二班")
-//    private val caocao = Student(id = 13, name = "曹操", cls = "五年一班")
-//    private val sunquan = Student(id = 14, name = "孙权", cls = "幼儿园小班")
+    private val liubei = Student(id = 12, name = "刘备0", cls = "三年二班", age = 19)
+    private val caocao = Student(id = 13, name = "曹操0", cls = "五年一班", age = 28)
+    private val sunquan = Student(id = 14, name = "孙权0", cls = "幼儿园小班", age = 18)
 
-    private val liubei =
-        Student(id = 12, name = "刘备", cls = "三年二班", address = "巴蜀", age = 23)
-    private val caocao =
-        Student(id = 13, name = "曹操", cls = "五年一班", address = "许都", age = 28)
-    private val sunquan =
-        Student(id = 14, name = "孙权", cls = "幼儿园小班", address = "吴郡", age = 18)
+//    private val liubei =
+//        Student(id = 12, name = "刘备", cls = "三年二班", address = "巴蜀", age = 23)
+//    private val caocao =
+//        Student(id = 13, name = "曹操", cls = "五年一班", address = "许都", age = 28)
+//    private val sunquan =
+//        Student(id = 14, name = "孙权", cls = "幼儿园小班", address = "吴郡", age = 18)
 
     private lateinit var dao: StudentDao
     private val disposable = CompositeDisposable()
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
     //rxjava
     private fun fromRxJava() {
         disposable.add(
-            dao.getAllStudentObservable().subscribeOn(IoScheduler())
+            dao.getStudents("刘备0").subscribeOn(IoScheduler())
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(Consumer { t -> printlnList(t) })
         )
