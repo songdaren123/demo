@@ -13,6 +13,14 @@ buildscript {
         truthVersion = '0.42'
         junitVersion = '4.12'
         gradleVersion = '3.6.3'
+        materialVersion = '1.2.0'
+        nav_version = "2.3.0"
+        room_version = "2.2.5"
+        glideVersion = '4.10.0'
+        gradleVersion = '4.0.0'
+        gsonVersion = '2.8.2'
+        retrofitVersion = '2.9.0'
+        okhttpLoggingVersion = '4.7.2'
     }
     repositories {
         google()

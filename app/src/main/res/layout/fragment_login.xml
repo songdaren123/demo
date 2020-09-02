@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+
+        <variable
+            name="loginInfo"
+            type="com.it.roomdemo.data.LoginInfo" />
+
+        <variable
+            name="loginmodel"
+            type="com.it.roomdemo.viewmodel.LoginViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_login">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="请入手机号"
+                android:inputType="phone"
+                android:text="@{loginInfo.name}" />
+
+            <view
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#8C8A8A" />
+
+            <EditText
+                android:id="@+id/user_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:text="@{loginInfo.pwd}" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{()->loginmodel.login(loginInfo)}" />
+
+    </RelativeLayout>
+
+</layout>

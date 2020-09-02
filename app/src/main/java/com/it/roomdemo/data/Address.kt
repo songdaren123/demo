@@ -1,4 +1,4 @@
-package com.it.roomdemo
+package com.it.roomdemo.data
 
 /**
  *

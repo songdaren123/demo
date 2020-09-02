@@ -1,34 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <Button
-        android:id="@+id/bt_insert"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="插入" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/bt_update"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="更新" />
-
-    <Button
-        android:id="@+id/bt_delete"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="删除" />
-
-    <Button
-        android:id="@+id/bt_select"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="查找" />
+        <fragment
+            android:id="@+id/nav_host_fragment_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph" />
+    </FrameLayout>
 
 
-</LinearLayout>
+</layout>
